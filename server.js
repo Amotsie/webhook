@@ -22,8 +22,8 @@ app.post("/webhook", (req, res) => {
             error: "Invalid input. Please provide a string in the 'data' field."
         });
     }
-    // Remove non-alphabetic characters
-    const lettersOnly = data.replace(/[^a-zA-Z]/g, "");
+    // Remove non-alphabetic and non-numeric characters
+    const lettersOnly = data.replace(/[^a-zA-Z0-9]/g, "");
 
     // Convert string to array of characters
     const charArray = lettersOnly.split("");
